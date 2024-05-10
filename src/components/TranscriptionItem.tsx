@@ -7,15 +7,18 @@ export default function TranscriptionItem({
   playFromTime
 }: TranscriptionItemProps) {
   return (
-    <li className="flex gap-3 text-sm sm:text-base">
+    <li className="flex text-sm sm:text-base">
       <span
         className={`${
           role === "user" ? "text-lightblue" : "text-pink"
-        } min-w-14 capitalize`}
+        } min-w-14 capitalize pt-2`}
       >
         {role}
       </span>
-      <p className="" onClick={() => playFromTime({ currentTime: start })}>
+      <p
+        className="p-2 rounded-xl"
+        onClick={() => playFromTime({ currentTime: start })}
+      >
         {content}
       </p>
     </li>

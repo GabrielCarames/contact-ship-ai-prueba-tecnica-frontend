@@ -3,7 +3,8 @@ import TranscriptionItem from "./TranscriptionItem"
 
 export default function Transcription({
   transcription,
-  audioRef
+  audioRef,
+  contentRef
 }: TranscriptionProps) {
   const playFromTime = ({ currentTime }: PlayFromTimeProps) => {
     if (audioRef.current) {
@@ -13,7 +14,10 @@ export default function Transcription({
   }
 
   return (
-    <ul className="flex flex-col gap-10 max-w-screen-md text-white">
+    <ul
+      className="flex flex-col gap-5 max-w-screen-md text-white"
+      ref={contentRef}
+    >
       {transcription.map(content => (
         <TranscriptionItem
           key={`${content.start}-${content.end}`}

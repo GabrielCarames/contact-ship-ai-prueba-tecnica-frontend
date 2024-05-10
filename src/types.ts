@@ -8,6 +8,7 @@ export interface TranscriptionJSONProps {
 export interface TranscriptionProps {
   transcription: TranscriptionJSONProps[]
   audioRef: React.RefObject<HTMLAudioElement>
+  contentRef: React.RefObject<HTMLUListElement>
 }
 
 export interface PlayFromTimeProps {
