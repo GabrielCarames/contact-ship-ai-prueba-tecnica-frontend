@@ -1,4 +1,8 @@
-import { ToggleActiveContentProps, TranscriptionJSONProps } from "@/types"
+import {
+  PlayFromTimeProps,
+  ToggleActiveContentProps,
+  TranscriptionJSONProps
+} from "@/types"
 import { useEffect, useRef } from "react"
 
 const useAudio = ({
@@ -55,7 +59,14 @@ const useAudio = ({
     }
   }, [])
 
-  return { audioRef, contentRef }
+  const playFromTime = ({ currentTime }: PlayFromTimeProps) => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = currentTime
+      audioRef.current.play()
+    }
+  }
+
+  return { audioRef, contentRef, playFromTime }
 }
 
 export default useAudio

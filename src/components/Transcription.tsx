@@ -1,18 +1,11 @@
-import { PlayFromTimeProps, TranscriptionProps } from "@/types"
+import { TranscriptionProps } from "@/types"
 import TranscriptionItem from "./TranscriptionItem"
 
 export default function Transcription({
   transcription,
-  audioRef,
-  contentRef
+  contentRef,
+  playFromTime
 }: TranscriptionProps) {
-  const playFromTime = ({ currentTime }: PlayFromTimeProps) => {
-    if (audioRef.current) {
-      audioRef.current.currentTime = currentTime
-      audioRef.current.play()
-    }
-  }
-
   return (
     <ul
       className="flex flex-col gap-5 max-w-screen-md text-white"
