@@ -22,6 +22,6 @@ export interface TranscriptionItemProps
 }
 
 export interface ToggleActiveContentProps {
-  activeContentIndex: number
+  contentIndexToActivate: number
   currentContentRef: HTMLUListElement
 }

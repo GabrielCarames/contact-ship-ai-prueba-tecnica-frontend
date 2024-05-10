@@ -13,24 +13,21 @@ const useAudio = ({
   const audioRef = useRef<HTMLAudioElement>(null)
   const contentRef = useRef<HTMLUListElement>(null)
 
-  const toggleActiveContent = ({
-    activeContentIndex,
+  const handleActiveContent = ({
+    contentIndexToActivate,
     currentContentRef
   }: ToggleActiveContentProps) => {
-    if (activeContentIndex === -1) return
+    const currentActiveContent = currentContentRef.querySelector(
+      ".active-content"
+    ) as HTMLLIElement
+    currentActiveContent?.classList?.remove("active-content")
     const contentElement = currentContentRef.childNodes[
-      activeContentIndex
+      contentIndexToActivate
     ] as HTMLLIElement
-    if (activeContentIndex > 0) {
-      const prevContentElement = currentContentRef.childNodes[
-        activeContentIndex - 1
-      ] as HTMLLIElement
-      prevContentElement?.classList?.remove("active-content")
-    }
     contentElement?.classList?.add("active-content")
   }
 
-  const getActiveContentIndex = ({
+  const getContentIndexToActivate = ({
     currentAudioRef
   }: {
     currentAudioRef: HTMLAudioElement
@@ -47,9 +44,10 @@ const useAudio = ({
     const currentContentRef = contentRef.current
     if (!currentAudioRef || !currentContentRef) return
     const onTimeUpdate = () => {
-      const activeContentIndex = getActiveContentIndex({ currentAudioRef })
-      if (activeContentIndex === -1) return
-      toggleActiveContent({ activeContentIndex, currentContentRef })
+      const contentIndexToActivate = getContentIndexToActivate({
+        currentAudioRef
+      })
+      handleActiveContent({ contentIndexToActivate, currentContentRef })
     }
     if (currentAudioRef) {
       currentAudioRef.addEventListener("timeupdate", onTimeUpdate)
@@ -57,7 +55,7 @@ const useAudio = ({
         currentAudioRef!.removeEventListener("timeupdate", onTimeUpdate)
       }
     }
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   const playFromTime = ({ currentTime }: PlayFromTimeProps) => {
     if (audioRef.current) {
