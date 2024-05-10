@@ -5,3 +5,7 @@
 .active-content > p {
   background-color: #9b33b7;
 }
+
+* {
+  transition-duration: 300ms;
+}

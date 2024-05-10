@@ -20,3 +20,8 @@ export interface TranscriptionItemProps
   playFromTime: ({ currentTime }: PlayFromTimeProps) => void
   start: number
 }
+
+export interface ToggleActiveContentProps {
+  activeContentIndex: number
+  currentContentRef: HTMLUListElement
+}
