@@ -13,12 +13,13 @@ export default function Transcription({
   }
 
   return (
-    <ul className="flex flex-col gap-10 max-w-screen-md">
+    <ul className="flex flex-col gap-10 max-w-screen-md text-white">
       {transcription.map(content => (
         <TranscriptionItem
           key={`${content.start}-${content.end}`}
-          startTime={content.start}
+          start={content.start}
           content={content.content}
+          role={content.role}
           playFromTime={playFromTime}
         />
       ))}
