@@ -1,4 +1,4 @@
-import { PlayFromTimeProps, TranscriptionItemProps } from "@/types"
+import { TranscriptionItemProps } from "@/types"
 
 export default function TranscriptionItem({
   start,
