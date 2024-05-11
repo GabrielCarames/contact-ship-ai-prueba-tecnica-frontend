@@ -9,3 +9,8 @@
 * {
   transition-duration: 300ms;
 }
+
+* {
+  scrollbar-color: #d90074 #0e1217;
+  scrollbar-width: thin;
+}
