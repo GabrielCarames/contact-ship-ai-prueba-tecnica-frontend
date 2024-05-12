@@ -4,24 +4,20 @@ import transcription from "../utils/transcription.json"
 import { TranscriptionJSONProps } from "@/types"
 import useAudio from "@/hooks/useAudio"
 
+import CustomAudioPlayer from "./CustomAudioPlayer"
 export default function AudioWithTranscription() {
   const { audioRef, contentRef, playFromTime } = useAudio({
     transcription: transcription as TranscriptionJSONProps[]
   })
 
   return (
-    <section className="flex flex-col gap-5 sm:gap-10 bg-black-2 p-5 rounded-xl border border-slate-700">
+    <section className="flex flex-col bg-black-2 p-5 rounded-xl border border-slate-700">
       <Transcription
         transcription={transcription as TranscriptionJSONProps[]}
         contentRef={contentRef}
         playFromTime={playFromTime}
       />
-      <audio
-        className="w-full"
-        ref={audioRef}
-        src="/media/test-call.wav"
-        controls
-      />
+      <CustomAudioPlayer src={"/media/test-call.wav"} audioRef={audioRef} />
     </section>
   )
 }

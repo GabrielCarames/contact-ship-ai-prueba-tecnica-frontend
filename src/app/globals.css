@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --progress-width: 0;
+  --buffered-width: 0;
+  --buffered-left: 0;
+}
+
 .active-content > p {
   background-color: #9b33b7;
 }
@@ -10,7 +16,7 @@
   transition-duration: 300ms;
 }
 
-* {
+ul {
   scrollbar-color: #d90074 #0e1217;
   scrollbar-width: thin;
 }

@@ -1,3 +1,5 @@
+import { RefObject } from "react"
+
 export interface TranscriptionJSONProps {
   start: number
   content: string
@@ -24,4 +26,26 @@ export interface TranscriptionItemProps
 export interface ToggleActiveContentProps {
   contentIndexToActivate: number
   currentContentRef: HTMLUListElement
+}
+
+export interface AudioPlayerProps {
+  src: string
+  audioRef: RefObject<HTMLAudioElement>
+}
+
+export interface ProgressCSSProps extends React.CSSProperties {
+  "--progress-width": number
+  "--buffered-width": number
+}
+
+export interface AudioProgressBarProps
+  extends React.ComponentPropsWithoutRef<"input"> {
+  duration: number
+  currentProgress: number
+  buffered: number
+}
+
+export interface VolumeInputProps {
+  volume: number
+  onVolumeChange: (volume: number) => void
 }
