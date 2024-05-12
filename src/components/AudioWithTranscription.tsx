@@ -12,7 +12,7 @@ export default function AudioWithTranscription() {
     })
 
   return (
-    <section className="flex flex-col bg-shark p-5 rounded-xl border border-slate-700">
+    <section className="flex flex-col bg-shark p-5 pt-0 rounded-xl border border-slate-700">
       <Transcription
         transcription={transcription as TranscriptionJSONProps[]}
         contentRef={contentRef}

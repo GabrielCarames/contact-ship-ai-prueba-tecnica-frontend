@@ -1,7 +1,6 @@
 import AudioProgressBar from "./customAudioPlayer/AudioProgressBar"
 import IconButton from "./customAudioPlayer/IconButton"
 import VolumeInput from "./customAudioPlayer/VolumeInput"
-import { Icon } from "@iconify/react/dist/iconify.js"
 import { AudioPlayerProps } from "@/types"
 import useCustomAudioPlayer from "@/hooks/useCustomAudioPlayer"
 
@@ -62,19 +61,15 @@ export default function CustomAudioPlayer({
               aria-label={isPlaying ? "Pause" : "Play"}
             >
               {!isReady && src ? (
-                <Icon icon="mdi:loading" color="#0074d9" className="size-12" />
+                <span className="icon-[mdi--loading] bg-mediumslateblue size-12" />
               ) : isPlaying ? (
-                <Icon
-                  icon="ic:baseline-pause-circle-outline"
-                  color="#0074d9"
-                  className="size-12"
-                />
+                <div className="border-4 border-mediumslateblue rounded-full p-2 flex justify-center items-center">
+                  <span className="icon-[ic--outline-pause] bg-white size-7" />
+                </div>
               ) : (
-                <Icon
-                  icon="ic:baseline-play-circle-outline"
-                  color="#0074d9"
-                  className="size-12"
-                />
+                <div className="border-4 border-mediumslateblue rounded-full p-2 flex justify-center items-center">
+                  <span className="icon-[ic--baseline-play-arrow] bg-white size-7" />
+                </div>
               )}
             </IconButton>
           </div>
@@ -84,17 +79,9 @@ export default function CustomAudioPlayer({
               aria-label={volume === 0 ? "unmute" : "mute"}
             >
               {volume === 0 ? (
-                <Icon
-                  icon="ic:baseline-volume-off"
-                  color="#0074d9"
-                  className="size-8"
-                />
+                <span className="icon-[ic--baseline-volume-off] bg-mediumslateblue size-8" />
               ) : (
-                <Icon
-                  icon="ic:baseline-volume-up"
-                  color="#0074d9"
-                  className="size-8"
-                />
+                <span className="icon-[ic--baseline-volume-up] bg-mediumslateblue size-8" />
               )}
             </IconButton>
             <VolumeInput volume={volume} onVolumeChange={handleVolumeChange} />
