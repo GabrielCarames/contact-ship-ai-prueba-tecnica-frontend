@@ -9,10 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        lightblue: "#0074d9",
-        pink: "#d90074",
-        "black-1": "#0E1217",
-        "black-2": "#1C1F26"
+        // lightblue: "#0074d9",
+        // pink: "#d90074",
+        bunker: "#0E1217",
+        shark: "#1C1F26",
+        mediumslateblue: "#0074d9",
+        darkviolet: "#ab09f6",
+        orange: "#f6ab09"
       }
     }
   },

@@ -9,7 +9,7 @@
 }
 
 .active-content > p {
-  background-color: #9b33b7;
+  background-color: #0074d9;
 }
 
 * {
@@ -17,6 +17,6 @@
 }
 
 ul {
-  scrollbar-color: #d90074 #0e1217;
+  scrollbar-color: #0074d9 #0e1217;
   scrollbar-width: thin;
 }

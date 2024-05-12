@@ -10,7 +10,7 @@ export default function TranscriptionItem({
     <li className="flex text-sm sm:text-base">
       <span
         className={`${
-          role === "user" ? "text-lightblue" : "text-pink"
+          role === "user" ? "text-darkviolet" : "text-orange"
         } min-w-14 capitalize pt-2`}
       >
         {role}

@@ -57,17 +57,17 @@ export default function CustomAudioPlayer({ src, audioRef }: AudioPlayerProps) {
               aria-label={isPlaying ? "Pause" : "Play"}
             >
               {!isReady && src ? (
-                <Icon icon="mdi:loading" color="#d90074" className="size-12" />
+                <Icon icon="mdi:loading" color="#0074d9" className="size-12" />
               ) : isPlaying ? (
                 <Icon
                   icon="ic:baseline-pause-circle-outline"
-                  color="#d90074"
+                  color="#0074d9"
                   className="size-12"
                 />
               ) : (
                 <Icon
-                  icon="ic:baseline-play-circle"
-                  color="#d90074"
+                  icon="ic:baseline-play-circle-outline"
+                  color="#0074d9"
                   className="size-12"
                 />
               )}
@@ -81,13 +81,13 @@ export default function CustomAudioPlayer({ src, audioRef }: AudioPlayerProps) {
               {volume === 0 ? (
                 <Icon
                   icon="ic:baseline-volume-off"
-                  color="#d90074"
+                  color="#0074d9"
                   className="size-8"
                 />
               ) : (
                 <Icon
                   icon="ic:baseline-volume-up"
-                  color="#d90074"
+                  color="#0074d9"
                   className="size-8"
                 />
               )}

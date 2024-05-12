@@ -8,10 +8,10 @@ export default function Transcription({
   playFromTime
 }: TranscriptionProps) {
   return (
-    <section className="flex flex-col gap-3">
+    <section className="flex flex-col gap-0">
       <TranscriptionHeader />
       <ul
-        className="flex flex-col gap-2 sm:gap-5 max-w-screen-md text-white max-h-96 overflow-y-scroll"
+        className="flex flex-col gap-2 sm:gap-5 max-w-screen-md text-white max-h-96 overflow-y-scroll pr-5 py-2"
         ref={contentRef}
       >
         {transcription.map(content => (

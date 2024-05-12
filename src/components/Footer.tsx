@@ -9,7 +9,7 @@ export default function Footer() {
         <Link
           href="https://www.linkedin.com/in/gabrielcarames/"
           target="_blank"
-          className="ml-1 flex items-center gap-1 hover:text-lightblue"
+          className="ml-1 flex items-center gap-1 hover:text-darkviolet"
         >
           <Image
             src="/media/linkedin-logo.webp"
