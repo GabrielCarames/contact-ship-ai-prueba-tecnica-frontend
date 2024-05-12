@@ -16,10 +16,11 @@ const config: Config = {
         mediumslateblue: "#0074d9",
         blue: "#3509f6",
         darkviolet: "#ab09f6",
-        orange: "#f6ab09"
+        orange: "#f6ab09",
+        mercury: "#e3e5ec"
       }
     }
   },
-  plugins: [addDynamicIconSelectors()]
+  plugins: [addDynamicIconSelectors(), require("tailwind-scrollbar")]
 }
 export default config

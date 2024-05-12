@@ -15,8 +15,3 @@
 * {
   transition-duration: 300ms;
 }
-
-ul {
-  scrollbar-color: #0074d9 #0e1217;
-  scrollbar-width: thin;
-}
