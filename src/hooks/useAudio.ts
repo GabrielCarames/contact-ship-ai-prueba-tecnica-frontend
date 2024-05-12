@@ -36,8 +36,8 @@ const useAudio = ({
   }) =>
     transcription.findIndex(content => {
       return (
-        currentAudioRef.currentTime > content.start &&
-        currentAudioRef.currentTime < content.end
+        currentAudioRef.currentTime >= content.start &&
+        currentAudioRef.currentTime <= content.end
       )
     })
 
@@ -50,6 +50,7 @@ const useAudio = ({
         currentAudioRef
       })
       handleActiveContent({ contentIndexToActivate, currentContentRef })
+      scrollToContent(currentAudioRef)
     }
     if (currentAudioRef) {
       currentAudioRef.addEventListener("timeupdate", onTimeUpdate)
@@ -59,11 +60,22 @@ const useAudio = ({
     }
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
+  const scrollToContent = (currentAudioRef: HTMLAudioElement) => {
+    const contentIndexToActivate = getContentIndexToActivate({
+      currentAudioRef
+    })
+    const contentElement = contentRef.current?.childNodes[
+      contentIndexToActivate
+    ] as HTMLLIElement
+    contentElement?.scrollIntoView({ behavior: "smooth" })
+  }
+
   const playFromTime = ({ currentTime }: PlayFromTimeProps) => {
     if (audioRef.current) {
       audioRef.current.currentTime = currentTime
       audioRef.current.play()
       setIsPlaying(true)
+      scrollToContent(audioRef.current)
     }
   }
 

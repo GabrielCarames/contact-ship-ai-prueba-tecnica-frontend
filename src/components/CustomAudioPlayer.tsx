@@ -51,9 +51,10 @@ export default function CustomAudioPlayer({
           onChange={handleAudioChange}
         />
         <div className="grid grid-cols-3 items-center pt-4">
-          <span className="text-xs">
-            {elapsedDisplay} / {durationDisplay}
-          </span>
+          <p className="text-xs flex gap-1">
+            <span className="text-white">{elapsedDisplay}</span>/
+            <span>{durationDisplay}</span>
+          </p>
           <div className="flex items-center gap-4 justify-self-center">
             <IconButton
               disabled={!isReady}
