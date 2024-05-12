@@ -4,7 +4,7 @@ import Header from "@/components/Header"
 
 export default function HomePage() {
   return (
-    <main className="w-full bg-bunker min-h-screen flex justify-center items-center flex-col gap-10 p-2 py-6">
+    <main className="w-full bg-white dark:bg-bunker min-h-screen flex justify-center items-center flex-col gap-10 p-2 py-6">
       <Header />
       <AudioWithTranscription />
       <Footer />
