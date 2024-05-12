@@ -31,6 +31,8 @@ export interface ToggleActiveContentProps {
 export interface AudioPlayerProps {
   src: string
   audioRef: RefObject<HTMLAudioElement>
+  isPlaying: boolean
+  setIsPlaying: (isPlaying: boolean) => void
 }
 
 export interface ProgressCSSProps extends React.CSSProperties {
@@ -48,4 +50,10 @@ export interface AudioProgressBarProps
 export interface VolumeInputProps {
   volume: number
   onVolumeChange: (volume: number) => void
+}
+
+export interface CustomAudioPlayerProps {
+  audioRef: React.RefObject<HTMLAudioElement>
+  isPlaying: boolean
+  setIsPlaying: (isPlaying: boolean) => void
 }

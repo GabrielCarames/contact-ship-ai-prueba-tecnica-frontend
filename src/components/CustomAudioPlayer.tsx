@@ -5,14 +5,18 @@ import { Icon } from "@iconify/react/dist/iconify.js"
 import { AudioPlayerProps } from "@/types"
 import useCustomAudioPlayer from "@/hooks/useCustomAudioPlayer"
 
-export default function CustomAudioPlayer({ src, audioRef }: AudioPlayerProps) {
+export default function CustomAudioPlayer({
+  src,
+  audioRef,
+  isPlaying,
+  setIsPlaying
+}: AudioPlayerProps) {
   const {
     isReady,
     duration,
     currrentProgress,
     buffered,
     volume,
-    isPlaying,
     durationDisplay,
     elapsedDisplay,
     togglePlayPause,
@@ -22,7 +26,7 @@ export default function CustomAudioPlayer({ src, audioRef }: AudioPlayerProps) {
     handleAudioChange,
     setCurrrentProgress,
     setVolume
-  } = useCustomAudioPlayer({ audioRef })
+  } = useCustomAudioPlayer({ audioRef, isPlaying, setIsPlaying })
 
   return (
     <div className="border-t border-t-slate-700 pt-5">

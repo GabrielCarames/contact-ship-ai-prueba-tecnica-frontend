@@ -6,9 +6,10 @@ import useAudio from "@/hooks/useAudio"
 
 import CustomAudioPlayer from "./CustomAudioPlayer"
 export default function AudioWithTranscription() {
-  const { audioRef, contentRef, playFromTime } = useAudio({
-    transcription: transcription as TranscriptionJSONProps[]
-  })
+  const { audioRef, contentRef, playFromTime, isPlaying, setIsPlaying } =
+    useAudio({
+      transcription: transcription as TranscriptionJSONProps[]
+    })
 
   return (
     <section className="flex flex-col bg-shark p-5 rounded-xl border border-slate-700">
@@ -17,7 +18,12 @@ export default function AudioWithTranscription() {
         contentRef={contentRef}
         playFromTime={playFromTime}
       />
-      <CustomAudioPlayer src={"/media/test-call.wav"} audioRef={audioRef} />
+      <CustomAudioPlayer
+        src={"/media/test-call.wav"}
+        audioRef={audioRef}
+        isPlaying={isPlaying}
+        setIsPlaying={setIsPlaying}
+      />
     </section>
   )
 }

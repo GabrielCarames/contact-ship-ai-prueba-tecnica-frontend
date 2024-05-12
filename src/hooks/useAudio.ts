@@ -3,13 +3,15 @@ import {
   ToggleActiveContentProps,
   TranscriptionJSONProps
 } from "@/types"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 const useAudio = ({
   transcription
 }: {
   transcription: TranscriptionJSONProps[]
 }) => {
+  const [isPlaying, setIsPlaying] = useState(false)
+
   const audioRef = useRef<HTMLAudioElement>(null)
   const contentRef = useRef<HTMLUListElement>(null)
 
@@ -61,10 +63,11 @@ const useAudio = ({
     if (audioRef.current) {
       audioRef.current.currentTime = currentTime
       audioRef.current.play()
+      setIsPlaying(true)
     }
   }
 
-  return { audioRef, contentRef, playFromTime }
+  return { audioRef, contentRef, playFromTime, isPlaying, setIsPlaying }
 }
 
 export default useAudio

@@ -1,16 +1,16 @@
+import { CustomAudioPlayerProps } from "@/types"
 import { ReactEventHandler, useEffect, useState } from "react"
 
 const useCustomAudioPlayer = ({
-  audioRef
-}: {
-  audioRef: React.RefObject<HTMLAudioElement>
-}) => {
+  audioRef,
+  isPlaying,
+  setIsPlaying
+}: CustomAudioPlayerProps) => {
   const [isReady, setIsReady] = useState(false)
   const [duration, setDuration] = useState(0)
   const [currrentProgress, setCurrrentProgress] = useState(0)
   const [buffered, setBuffered] = useState(0)
   const [volume, setVolume] = useState(0.2)
-  const [isPlaying, setIsPlaying] = useState(false)
 
   const formatDurationDisplay = (duration: number) => {
     const min = Math.floor(duration / 60)
@@ -77,6 +77,10 @@ const useCustomAudioPlayer = ({
     setDuration(seconds)
     setIsReady(true)
   }, [])
+
+  useEffect(() => {
+    console.log("playing?")
+  }, [audioRef.current])
 
   return {
     isReady,
