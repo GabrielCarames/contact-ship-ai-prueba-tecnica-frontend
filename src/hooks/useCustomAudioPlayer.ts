@@ -1,5 +1,5 @@
 import { CustomAudioPlayerProps } from "@/types"
-import { ReactEventHandler, useEffect, useState } from "react"
+import { ReactEventHandler, useState } from "react"
 
 const useCustomAudioPlayer = ({
   audioRef,

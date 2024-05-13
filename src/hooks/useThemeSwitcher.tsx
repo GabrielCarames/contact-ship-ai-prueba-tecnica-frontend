@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 
 const defaultTheme = () => {
+  if (typeof window === "undefined") return "light"
   const theme = localStorage.getItem("theme")
   if (theme) {
     return theme
