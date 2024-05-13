@@ -2,12 +2,12 @@ import Image from "next/image"
 
 export default function Header() {
   return (
-    <header className="text-white flex flex-col gap-5 text-center">
+    <header className="flex flex-col gap-5 text-center">
       <div className="flex gap-5 items-center self-center">
         <Image
-          src="/media/contact-ship-ai-logo.webp"
+          src="/media/contact-ship-ai-logo.png"
           alt="Logo de ContactShip AI"
-          className="size-10 sm:size-12"
+          className="size-14 sm:size-16"
           width={50}
           height={50}
         />

@@ -7,7 +7,7 @@ export default function TranscriptionItem({
   playFromTime
 }: TranscriptionItemProps) {
   return (
-    <li className="flex text-sm sm:text-base">
+    <li className="flex text-sm sm:text-base group">
       <span
         className={`${
           role === "user" ? "text-darkviolet" : "text-orange"
@@ -16,7 +16,7 @@ export default function TranscriptionItem({
         {role}
       </span>
       <p
-        className="p-2 rounded-xl"
+        className="p-2 rounded-xl group-[.active-content]:bg-mediumslateblue group-[.active-content]:text-white duration-300"
         onClick={() => playFromTime({ currentTime: start })}
       >
         {content}

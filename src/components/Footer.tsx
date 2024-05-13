@@ -4,7 +4,7 @@ import Link from "next/link"
 export default function Footer() {
   return (
     <footer>
-      <p className="text-white flex text-sm items-center text-center">
+      <p className="flex text-sm items-center text-center">
         Hecho por
         <Link
           href="https://www.linkedin.com/in/gabrielcarames/"

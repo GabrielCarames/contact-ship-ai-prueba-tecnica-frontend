@@ -13,7 +13,7 @@ export default function VolumeInput({
       step={0.05}
       max={1}
       value={volume}
-      className="w-[80px] m-0 h-2 rounded-full accent-amber-600 bg-gray-700 appearance-none cursor-pointer"
+      className="w-[80px] m-0 h-2 rounded-full accent-mediumslateblue bg-mercury dark:bg-gray-700 appearance-none cursor-pointer"
       onChange={e => {
         onVolumeChange(e.currentTarget.valueAsNumber)
       }}

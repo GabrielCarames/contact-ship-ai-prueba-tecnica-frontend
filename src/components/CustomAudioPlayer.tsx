@@ -24,16 +24,19 @@ export default function CustomAudioPlayer({
     handleVolumeChange,
     handleAudioChange,
     setCurrrentProgress,
-    setVolume
+    setVolume,
+    currentAudioRef,
+    handleDurationChange
   } = useCustomAudioPlayer({ audioRef, isPlaying, setIsPlaying })
 
   return (
-    <div className="border-t border-t-slate-700 pt-5">
-      <div className="bg-dark-1 text-slate-400 relative">
+    <div className="border-t border-t-slate-300 dark:border-t-slate-700 pt-5">
+      <div className="bg-dark-1 text-slate-500 dark:text-slate-400 relative">
         <audio
-          ref={audioRef}
+          ref={currentAudioRef}
           preload="metadata"
           autoPlay={false}
+          onLoadedMetadata={handleDurationChange}
           onTimeUpdate={e => {
             setCurrrentProgress(e.currentTarget.currentTime)
             handleBufferProgress(e)
@@ -51,8 +54,8 @@ export default function CustomAudioPlayer({
         />
         <div className="grid grid-cols-3 items-center pt-4">
           <p className="text-xs flex gap-1">
-            <span className="text-white">{elapsedDisplay}</span>/
-            <span>{durationDisplay}</span>
+            <span className="text-black dark:text-white">{elapsedDisplay}</span>
+            /<span>{durationDisplay}</span>
           </p>
           <div className="flex items-center gap-4 justify-self-center">
             <IconButton
@@ -61,14 +64,14 @@ export default function CustomAudioPlayer({
               aria-label={isPlaying ? "Pause" : "Play"}
             >
               {!isReady && src ? (
-                <span className="icon-[mdi--loading] bg-mediumslateblue size-12" />
+                <span className="icon-[mdi--loading] bg-mediumslateblue size-12 animate-spin" />
               ) : isPlaying ? (
-                <div className="border-4 border-mediumslateblue rounded-full p-2 flex justify-center items-center">
-                  <span className="icon-[ic--outline-pause] bg-white size-7" />
+                <div className="border-4 border-mediumslateblue rounded-full p-2 flex justify-center items-center hover:bg-mediumslateblue group duration-300">
+                  <span className="icon-[ic--outline-pause] bg-black dark:bg-white size-5 sm:size-7 group-hover:bg-white group-hover:dark:bg-black" />
                 </div>
               ) : (
-                <div className="border-4 border-mediumslateblue rounded-full p-2 flex justify-center items-center">
-                  <span className="icon-[ic--baseline-play-arrow] bg-white size-7" />
+                <div className="border-4 border-mediumslateblue rounded-full p-2 flex justify-center items-center hover:bg-mediumslateblue group duration-300">
+                  <span className="icon-[ic--baseline-play-arrow] bg-black dark:bg-white size-5 sm:size-7 group-hover:bg-white group-hover:dark:bg-black" />
                 </div>
               )}
             </IconButton>
@@ -79,9 +82,9 @@ export default function CustomAudioPlayer({
               aria-label={volume === 0 ? "unmute" : "mute"}
             >
               {volume === 0 ? (
-                <span className="icon-[ic--baseline-volume-off] bg-mediumslateblue size-8" />
+                <span className="icon-[ic--baseline-volume-off] bg-mediumslateblue size-6 sm:size-8 hover:scale-105 duration-300" />
               ) : (
-                <span className="icon-[ic--baseline-volume-up] bg-mediumslateblue size-8" />
+                <span className="icon-[ic--baseline-volume-up] bg-mediumslateblue size-6 sm:size-8 hover:scale-105 duration-300" />
               )}
             </IconButton>
             <VolumeInput volume={volume} onVolumeChange={handleVolumeChange} />

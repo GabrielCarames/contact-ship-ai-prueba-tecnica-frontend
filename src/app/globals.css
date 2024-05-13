@@ -8,10 +8,18 @@
   --buffered-left: 0;
 }
 
-.active-content > p {
-  background-color: #0074d9;
+.progress-bar::-webkit-slider-thumb {
+  z-index: 4;
+  position: relative;
 }
 
-* {
-  transition-duration: 300ms;
+.progress-bar::before {
+  transform: scaleX(var(--progress-width));
+  z-index: 3;
+}
+
+.progress-bar::after {
+  transform: scaleX(var(--buffered-width));
+  transform-origin: left;
+  z-index: 2;
 }

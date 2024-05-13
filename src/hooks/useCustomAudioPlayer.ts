@@ -70,17 +70,12 @@ const useCustomAudioPlayer = ({
     audioRef.current.currentTime = e.currentTarget.valueAsNumber
     setCurrrentProgress(e.currentTarget.valueAsNumber)
   }
-
-  useEffect(() => {
+  const handleDurationChange = () => {
     if (!audioRef.current) return
     const seconds = Math.floor(audioRef.current.duration)
     setDuration(seconds)
     setIsReady(true)
-  }, [])
-
-  useEffect(() => {
-    console.log("playing?")
-  }, [audioRef.current])
+  }
 
   return {
     isReady,
@@ -97,7 +92,9 @@ const useCustomAudioPlayer = ({
     handleVolumeChange,
     handleAudioChange,
     setCurrrentProgress,
-    setVolume
+    setVolume,
+    currentAudioRef: audioRef,
+    handleDurationChange
   }
 }
 
