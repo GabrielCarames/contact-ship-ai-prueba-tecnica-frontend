@@ -12,6 +12,7 @@ export default function TranscriptionHeader() {
         <button
           className="absolute right-0 mt-auto border-4 border-mediumslateblue rounded-full bg-transparent p-2 flex justify-center items-center hover:bg-mediumslateblue group duration-300"
           onClick={() => setTheme("light")}
+          aria-label="Cambiar a tema claro"
         >
           <span className="icon-[ic--sharp-wb-sunny] bg-white size-5 sm:size-6 group-hover:bg-black" />
         </button>
@@ -19,6 +20,7 @@ export default function TranscriptionHeader() {
         <button
           className="absolute right-0 mt-auto border-4 border-mediumslateblue rounded-full bg-transparent p-2 flex justify-center items-center hover:bg-mediumslateblue group duration-300"
           onClick={() => setTheme("dark")}
+          aria-label="Cambiar a tema oscuro"
         >
           <span className="icon-[ic--baseline-mode-night] bg-black size-5 sm:size-6 group-hover:bg-white" />
         </button>
