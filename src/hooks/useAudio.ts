@@ -58,7 +58,7 @@ const useAudio = ({
         currentAudioRef!.removeEventListener("timeupdate", onTimeUpdate)
       }
     }
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [audioRef.current]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const scrollToContent = (currentAudioRef: HTMLAudioElement) => {
     const contentIndexToActivate = getContentIndexToActivate({
