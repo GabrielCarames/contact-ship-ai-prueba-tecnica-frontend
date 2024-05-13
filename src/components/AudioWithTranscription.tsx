@@ -3,7 +3,10 @@ import Transcription from "@/components/Transcription"
 import transcription from "../utils/transcription.json"
 import { TranscriptionJSONProps } from "@/types"
 import useAudio from "@/hooks/useAudio"
-import CustomAudioPlayer from "./CustomAudioPlayer"
+import dynamic from "next/dynamic"
+const CustomAudioPlayer = dynamic(() => import("./CustomAudioPlayer"), {
+  ssr: false
+})
 
 export default function AudioWithTranscription() {
   const { audioRef, contentRef, playFromTime, isPlaying, setIsPlaying } =
