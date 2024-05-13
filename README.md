@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Gabriel Caramés | Prueba técnica para desarrollador front-end en ContactShip AI 🌌
 
-## Getting Started
+## Tecnologías 💫
+[![NextJS](https://img.shields.io/badge/-Next.JS-black?style=for-the-badge&logo=Next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/-React.js-blue?style=for-the-badge&logo=React)](https://es.reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/-TypeScript-white?style=for-the-badge&logo=Typescript)](https://www.typescriptlang.org/)
+[![Javascript](https://img.shields.io/badge/-Javascript-323330?style=for-the-badge&logo=Javascript&logoColor=F7DF1E)](https://developer.mozilla.org/es/docs/Web/JavaScript)
+[![TailwindCSS](https://img.shields.io/badge/-TailwindCSS-38BDF8?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindui.com/)
 
-First, run the development server:
+## Funcionalidades
 
+- ***Mensajes de la transcripción:***
+Muestra a través de una lista de mensajes los diálogos tanto del agente como del usuario de la llamada. 
+
+- ***Reproductor:***
+Implementa a través de un reproductor personalizado la opción para reproducir la llamada, pausarla, subir y bajar el volumen, y visualizar el segundo actual.
+
+- ***Ir hacia el diálogo elegido:***
+Permite reproducir el diálogo seleccionado a través de un click, efectuando una animación de scroll y resaltando el mensaje.
+
+- ***Modo oscuro:***
+Permite cambiar a través de un botón, entre el modo claro y el modo oscuro.
+
+## Versión de escritorio 🖥️
+
+![image](https://github.com/GabrielCarames/contact-ship-ai-prueba-tecnica-frontend/assets/49535753/a94d2060-1a2e-4925-92b3-c09a27b1289a)
+![image](https://github.com/GabrielCarames/contact-ship-ai-prueba-tecnica-frontend/assets/49535753/e2cd39ec-cbfe-4304-ae18-f05d64d9db87)
+
+
+## Versión móvil 📱
+
+![image](https://github.com/GabrielCarames/contact-ship-ai-prueba-tecnica-frontend/assets/49535753/d9209415-2e79-44a0-930b-e53258dd7648)
+![image](https://github.com/GabrielCarames/contact-ship-ai-prueba-tecnica-frontend/assets/49535753/78eb8e24-7986-44f3-ace1-8103f73eeeec)
+
+
+## Instalar ⚒
+Clonar e instalar
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/GabrielCarames/contact-ship-ai-prueba-tecnica-frontend.git
+pnpm i
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Ejecutar la aplicación de forma local
+```bash
+pnpm run dev
+```
+https://contact-ship-ai-prueba-tecnica-frontend.vercel.app/
+## Despliegue 🚀
+Puedes ver el despliegue de la aplicación [aquí](https://contact-ship-ai-prueba-tecnica-frontend.vercel.app/).
