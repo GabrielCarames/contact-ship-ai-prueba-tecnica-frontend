@@ -1,5 +1,5 @@
 import { CustomAudioPlayerProps } from "@/types"
-import { ReactEventHandler, useState } from "react"
+import { ReactEventHandler, useEffect, useState } from "react"
 
 const useCustomAudioPlayer = ({
   audioRef,
@@ -77,6 +77,10 @@ const useCustomAudioPlayer = ({
     setDuration(seconds)
     setIsReady(true)
   }
+
+  useEffect(() => {
+    handleDurationChange()
+  }, [])
 
   return {
     isReady,
